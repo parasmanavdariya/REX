@@ -1,6 +1,5 @@
 import re
 class Lexi:
-
     def __init__(self):
       pass
     def reader(self):
@@ -12,12 +11,12 @@ class Lexi:
                 return statement.readlines()
             else:
               return "START NOT FOUND"
-
 TokenGenerator = Lexi()
-
 Tokens=list(TokenGenerator.reader())
+def Var (Tokens):
+  for i in Tokens:
+    v=re.findall("\AInt_[a-zA-Z][:][0-9]", i)
+    if v == True:
+      print("Tokens",v)
 
-for i in Tokens:
-  checkToken=re.findall("\AInt_[a-zA-Z][:][0-9]", i)
-  
-  print("Tokens",checkToken)
+Var(Tokens)
